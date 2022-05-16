@@ -1,0 +1,203 @@
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: rgb(248, 239, 225);
+  --color-secondary: rgb(233, 124, 110);
+  --color-tertiary: rgb(234, 78, 21);
+  --color-quarternary: white;
+}
+
+html {
+  font-size: 62.5%;  /* 1rem = 10px */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+}
+
+#root {
+  width: 600px;
+  height: 600px;
+  background-color: var(--color-quarternary);
+  border: solid red 1px;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  padding: 1%;
+  background-color: var(--color-secondary);
+}
+    nav img {
+      width: 25%;
+    }
+    .nav-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15%;
+    }
+        .nav-list-item {
+          list-style: none;          
+        }
+            .nav-link {
+              font-size: 1.6rem;
+              text-decoration: none;
+              color: white;
+            }
+
+/* About */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+    .about p {
+      text-align: justify;
+      margin-top: 10%;
+    }
+
+/* Categories */
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1%;
+  margin-bottom: 1%;
+  background-color: var(--color-secondary);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+    .category .button {
+      font-size: 1.6rem;
+      border: none;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+    }
+        .category .button:hover {
+          transform: scale(1.2);
+        }
+
+/* Menu */
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+}
+  .item {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 2%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-primary);
+  }
+      .item img {
+        width: 60%;
+        border: solid var(--color-secondary);
+        border-radius: 5%;
+      }
+          .title-and-price{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1%;
+            margin-bottom: 2%;
+          }      
+              .title {
+                font-size: 1.5rem;
+                color: var(--color-tertiary);
+                text-transform: capitalize;
+                white-space: nowrap;
+              }
+              .price {
+                font-size: 1.5rem;
+                color: var(--color-tertiary);
+                text-transform: capitalize;
+                white-space: nowrap;
+              }
+          .info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+              .description-and-button {
+                display: flex;
+                flex-direction: column;
+                padding-left: 1%
+              }
+                  .description {
+                    font-size: 1.4rem;
+                    text-align: justify;
+                  }
+                  .description-and-button .button {
+                    font-size: 1.4rem;
+                    text-decoration: none;
+                    text-align: center;
+                    color: white;
+                    margin-top: 15%;
+                    padding: 2%;
+                    border-radius: 5%;
+                    background: var(--color-secondary);
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                  }
+                      .description-and-button .button:hover {
+                        background: var(--color-tertiary);
+                      }
+
+
+
+@media (max-width: 1024px) {
+  #root {
+    width: 560px;
+    height: 560px;
+  }
+
+  html {
+    font-size: 7px;
+  }
+}
+@media (max-width: 768px) {
+  #root {
+    width: 420px;
+    height: 420px;
+  }
+}
+@media (max-width: 576px) {
+  #root {
+    width: 350px;
+    height: 350px;
+  }
+
+  html {
+    font-size: 6px;
+  }
+}
+@media (max-width: 425px) {
+  #root {
+    width: 240px;
+    height: 240px;
+  }
+
+  html {
+    font-size: 4px;
+  }
+}
