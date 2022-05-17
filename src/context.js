@@ -1,22 +1,24 @@
 import React, {useState, useContext} from "react"
-import data from './data.js'
+import {platesData, reviewsData} from './data.js'
 
 const AppContext = React.createContext()
 
 //creating the unique categories, based on the data    
-const uniqueCategories = ['all', ...new Set(data.map(item => item.category))]
+const uniqueCategories = ['all', ...new Set(platesData.map(item => item.category))]
 
 const AppProvider = ({children}) => {
     //declaring global states
-    const [menu, setMenu] = useState(data)
+    const [plates, setPlates] = useState(platesData)
     const [categories, _] = useState([...uniqueCategories])
-    
+    const [readMore, setReadMore] = useState(true)
+    const [reviewIndex, setReviewIndex] = useState(0)
+
     //declaring functions
     const filterCategory = (category) => {
         if(category === 'all') {
-            setMenu(data)
+            setPlates(platesData)
         } else {
-            setMenu(data.filter(item => item.category === category))
+            setPlates(platesData.filter(item => item.category === category))
         }
     }
 
@@ -24,8 +26,11 @@ const AppProvider = ({children}) => {
     return (
         <AppContext.Provider
             value={{
-                menu, setMenu,
-                categories, filterCategory
+                platesData, reviewsData,
+                plates, setPlates,
+                categories, filterCategory,
+                readMore, setReadMore,
+                reviewIndex, setReviewIndex
             }}
         >
             {children}

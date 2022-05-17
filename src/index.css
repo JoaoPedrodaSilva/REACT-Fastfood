@@ -52,11 +52,15 @@ nav {
         .nav-list-item {
           list-style: none;          
         }
+        .nav-list-item:hover {
+          transform: scale(1.2);
+        }
             .nav-link {
               font-size: 1.6rem;
               text-decoration: none;
               color: white;
             }
+            
 
 /* About */
 
@@ -65,10 +69,11 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5%;
+  padding: 10%;
 }
     .about p {
       text-align: justify;
+      line-height: 3rem;
       margin-top: 10%;
     }
 
@@ -82,7 +87,7 @@ nav {
   padding: 1%;
   margin-bottom: 1%;
   background-color: var(--color-secondary);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
     .category .button {
       font-size: 1.6rem;
@@ -95,75 +100,214 @@ nav {
           transform: scale(1.2);
         }
 
-/* Menu */
+/* Plates */
 
-.menu {
+.plates {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2%;
 }
-  .item {
+
+/* Plate */
+
+  .plate {
     display: flex;
     flex-direction: column;
     padding: 2%;
     border-radius: 2%;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     background-color: var(--color-primary);
   }
-      .item img {
+      .plate img {
         width: 60%;
         border: solid var(--color-secondary);
         border-radius: 5%;
       }
-          .title-and-price{
+          .plate .title-and-price{
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 1%;
             margin-bottom: 2%;
           }      
-              .title {
+              .plate .title {
                 font-size: 1.5rem;
                 color: var(--color-tertiary);
                 text-transform: capitalize;
                 white-space: nowrap;
               }
-              .price {
+              .plate .price {
                 font-size: 1.5rem;
                 color: var(--color-tertiary);
                 text-transform: capitalize;
                 white-space: nowrap;
               }
-          .info {
+          .plate .info {
             display: flex;
             align-items: center;
             justify-content: center;
           }
-              .description-and-button {
+              .plate .description-and-button {
                 display: flex;
                 flex-direction: column;
                 padding-left: 1%
               }
-                  .description {
+                  .plate .description {
                     font-size: 1.4rem;
                     text-align: justify;
                   }
-                  .description-and-button .button {
+                  .plate .description-and-button .button {
                     font-size: 1.4rem;
                     text-decoration: none;
                     text-align: center;
                     color: white;
                     margin-top: 15%;
-                    padding: 2%;
+                    padding: 3%;
                     border-radius: 5%;
                     background: var(--color-secondary);
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                   }
-                      .description-and-button .button:hover {
+                      .plate .description-and-button .button:hover {
                         background: var(--color-tertiary);
                       }
 
+/* Plate Details */
 
+.plate-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+    .plate-details .title {
+      font-size: 2.2rem;
+      margin-top: 2%;
+      color: var(--color-tertiary);
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+    .plate-details .price {
+      font-size: 2rem;
+      margin-bottom: 2%;
+      color: var(--color-tertiary);
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+    .plate-details img {
+      width: 60%;
+      border: solid var(--color-secondary);
+      border-radius: 5%;
+    }
+    .plate-details p {
+      font-size: 1.6rem;
+      width: 60%;
+      min-height: 17rem;
+      text-align: justify;
+      line-height: 2.2rem;
+      padding: 3% 0;
+    }
+        .plate-details .read-more{
+          background-color: transparent;
+          border: none;
+          color: blue;
+          font-size: 1.6rem;
+          line-height: 1.75rem;
+          text-align: start;
+          padding: 0;
+          padding-left: 2%;
+        }
+    .plate-details .button {
+      font-size: 1.8rem;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 1.2%;
+      border-radius: 5%;
+      background: var(--color-secondary);
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .plate-details .button:hover {
+      background: var(--color-tertiary);
+    }
+
+/* Reviews */
+
+.reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    .arrow {
+      font-size: 10rem;
+      margin: 6%;
+      margin-top: -45%;
+      color: var(--color-secondary);
+    }
+    .arrow:hover {
+      color: var(--color-tertiary);
+      transform: scale(1.2);
+    }
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  padding: 5% 2%;
+}
+    .review .img-container {
+      position: relative;
+      width: 14rem;
+      height: 14rem;
+      margin: 5% 0;
+    }
+        .review img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        .quote-icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4rem;
+          height: 4rem;
+          display: grid;
+          place-items: center;
+          border-radius: 50%;
+          background: var(--color-secondary);
+          color: var(--color-primary);
+        }
+    .review .name {
+      font-size: 2.2rem;
+      margin-bottom: 5%;
+    }
+    .review p {
+      font-size: 1.6rem;
+      text-align: center;
+      line-height: 3rem;
+      min-height: 50rem;
+    }
+
+/* Error */
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+
+.error p {
+  text-align: center;
+  line-height: 3rem;
+  margin-top: 15%;
+  width: 80%;
+}
+
+/* @media */
 
 @media (max-width: 1024px) {
   #root {

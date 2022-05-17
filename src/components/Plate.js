@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Item = ({id, title, price, img, desc}) => {    
-    
+const Item = ({id, title, price, img, desc}) => {
     return (
-        <article className='item'>
+        <article className='plate'>
             
             <div className='title-and-price'>
                 <div className='title'>
@@ -19,7 +18,7 @@ const Item = ({id, title, price, img, desc}) => {
                 <img src={img} alt={title} />
                 <div className='description-and-button'>
                     <p className='description'>{desc}</p>
-                    <Link to={`details/${id}`} className='button'>
+                    <Link to={`/details/${id}`} className='button'>
                         Details
                     </Link>
                 </div>

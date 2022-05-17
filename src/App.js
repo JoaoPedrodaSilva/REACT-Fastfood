@@ -7,7 +7,7 @@ import Plates from "./pages/Plates.js"
 import Reviews from './pages/Reviews.js'
 import About from "./pages/About.js"
 import Contact from './pages/Contact.js'
-import Details from "./pages/Details.js"
+import PlateDetails from "./pages/PlateDetails.js"
 import Error from "./pages/Error.js"
 
 //importing components
@@ -19,11 +19,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='plates' element={<Plates />} />
-          <Route path='reviews' element={<Reviews />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />          
-          <Route path='details/:id' element={<Details />} />
+          <Route path='/plates' element={<Plates />} />
+          <Route path='/reviews' element={<Reviews />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />          
+          <Route path='/details/:id' element={<PlateDetails />} />
           <Route path='*' element={<Error />} /> 
         </Routes>           
       </BrowserRouter>

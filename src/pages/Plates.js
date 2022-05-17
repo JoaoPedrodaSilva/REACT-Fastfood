@@ -1,10 +1,10 @@
 import React from 'react'
 import Category from '../components/Category'
-import Item from '../components/Item'
+import Plate from '../components/Plate.js'
 import { useGlobalContext } from '../context'
 
 const Plates = () => {
-  const {menu, categories, filterCategory} = useGlobalContext()   
+  const {plates, categories, filterCategory} = useGlobalContext()   
 
     return (
         <main>
@@ -14,9 +14,9 @@ const Plates = () => {
                 })}        
             </section>
 
-            <section className="menu">
-                {menu.map(item => {
-                    return <Item key={item.id} {...item} />
+            <section className="plates">
+                {plates.map(plate => {
+                    return <Plate key={plate.id} {...plate} />
                 })}        
             </section>
         </main>
