@@ -12,6 +12,11 @@ const AppProvider = ({children}) => {
     const [categories, _] = useState([...uniqueCategories])
     const [readMore, setReadMore] = useState(true)
     const [reviewIndex, setReviewIndex] = useState(0)
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+    const [isModalOpened, setIsModalOpened] = useState(false)
+    const [isSidebarOpened, setIsSidebarOpened] = useState(false)
 
     //declaring functions
     const filterCategory = (category) => {
@@ -21,6 +26,18 @@ const AppProvider = ({children}) => {
             setPlates(platesData.filter(item => item.category === category))
         }
     }
+    const openModal = () => {
+        setIsModalOpened(true)
+    }
+    const closeModal = () => {
+        setIsModalOpened(false)
+    }
+    const openSidebar = () => {
+        setIsSidebarOpened(true)  
+    }
+    const closeSidebar = () => {
+        setIsSidebarOpened(false)
+    }    
 
     //rendering
     return (
@@ -30,7 +47,10 @@ const AppProvider = ({children}) => {
                 plates, setPlates,
                 categories, filterCategory,
                 readMore, setReadMore,
-                reviewIndex, setReviewIndex
+                reviewIndex, setReviewIndex,
+                name, setName, email, setEmail, message, setMessage,
+                isModalOpened, openModal, closeModal,
+                isSidebarOpened, openSidebar, closeSidebar
             }}
         >
             {children}
